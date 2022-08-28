@@ -1,0 +1,10 @@
+88f995758133612942757aa649a72563
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = useDocumentTitle;
+
+function useDocumentTitle() {}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFlLFNBQVNBLGdCQUFULEdBQTRCLENBRTFDIiwibmFtZXMiOlsidXNlRG9jdW1lbnRUaXRsZSJdLCJzb3VyY2VzIjpbInVzZURvY3VtZW50VGl0bGUubmF0aXZlLnRzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiB1c2VEb2N1bWVudFRpdGxlKCkge1xuICAvLyBOb29wIGZvciBSZWFjdCBOYXRpdmVcbn1cbiJdfQ==
