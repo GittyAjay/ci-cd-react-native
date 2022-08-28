@@ -1,0 +1,86 @@
+fda9acaa5ad2967af88fe04ace720e29
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = useInvalidPreventRemoveError;
+
+var React = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache(nodeInterop) {
+  if (typeof WeakMap !== "function") return null;
+  var cacheBabelInterop = new WeakMap();
+  var cacheNodeInterop = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+    return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+  })(nodeInterop);
+}
+
+function _interopRequireWildcard(obj, nodeInterop) {
+  if (!nodeInterop && obj && obj.__esModule) {
+    return obj;
+  }
+
+  if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
+    return {
+      default: obj
+    };
+  }
+
+  var cache = _getRequireWildcardCache(nodeInterop);
+
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+
+  for (var key in obj) {
+    if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+
+      if (desc && (desc.get || desc.set)) {
+        Object.defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+
+  newObj.default = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
+}
+
+function useInvalidPreventRemoveError(state) {
+  var _state$routes$find;
+
+  var _React$useState = React.useState(null),
+      _React$useState2 = (0, _slicedToArray2.default)(_React$useState, 2),
+      nextDismissedKey = _React$useState2[0],
+      setNextDismissedKey = _React$useState2[1];
+
+  var dismissedRouteName = nextDismissedKey ? (_state$routes$find = state.routes.find(function (route) {
+    return route.key === nextDismissedKey;
+  })) === null || _state$routes$find === void 0 ? void 0 : _state$routes$find.name : null;
+  React.useEffect(function () {
+    if (dismissedRouteName) {
+      var message = "The screen '" + dismissedRouteName + "' was removed natively but didn't get removed from JS state. " + "This can happen if the action was prevented in a 'beforeRemove' listener, which is not fully supported in native-stack.\n\n" + "Consider using a 'usePreventRemove' hook with 'headerBackButtonMenuEnabled: false' to prevent users from natively going back multiple screens.";
+      console.error(message);
+    }
+  }, [dismissedRouteName]);
+  return {
+    setNextDismissedKey: setNextDismissedKey
+  };
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7QUFJQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUVlLFNBQVNBLDRCQUFULENBQ2JDLEtBRGEsRUFFYjtFQUFBOztFQUNBLHNCQUFnREMsS0FBSyxDQUFDQyxRQUFORCxDQUM5QyxJQUQ4Q0EsQ0FBaEQ7RUFBQTtFQUFBLElBQU9FLGdCQUFQO0VBQUEsSUFBeUJDLG1CQUF6Qjs7RUFJQSxJQUFNQyxrQkFBa0IsR0FBR0YsZ0JBQWdCLHlCQUN2Q0gsS0FBSyxDQUFDTSxNQUFOTixDQUFhTyxJQUFiUCxDQUFtQlEsZUFBRDtJQUFBLE9BQVdBLEtBQUssQ0FBQ0MsR0FBTkQsS0FBY0wsZ0JBQXpCO0VBQUEsQ0FBbEJILENBRHVDLHVEQUN2Q1UsbUJBQThEQyxJQUR2QixHQUV2QyxJQUZKO0VBSUFWLEtBQUssQ0FBQ1csU0FBTlgsQ0FBZ0IsWUFBTTtJQUNwQixJQUFJSSxrQkFBSixFQUF3QjtNQUN0QixJQUFNUSxPQUFPLEdBQ1YsaUJBQWNSLGtCQUFkLHFWQURIO01BS0FTLE9BQU8sQ0FBQ0MsS0FBUkQsQ0FBY0QsT0FBZEM7SUFDRDtFQVJILEdBU0csQ0FBQ1Qsa0JBQUQsQ0FUSEo7RUFXQSxPQUFPO0lBQUVHO0VBQUYsQ0FBUDtBQUNEIiwibmFtZXMiOlsidXNlSW52YWxpZFByZXZlbnRSZW1vdmVFcnJvciIsInN0YXRlIiwiUmVhY3QiLCJ1c2VTdGF0ZSIsIm5leHREaXNtaXNzZWRLZXkiLCJzZXROZXh0RGlzbWlzc2VkS2V5IiwiZGlzbWlzc2VkUm91dGVOYW1lIiwicm91dGVzIiwiZmluZCIsInJvdXRlIiwia2V5IiwiX3N0YXRlJHJvdXRlcyRmaW5kIiwibmFtZSIsInVzZUVmZmVjdCIsIm1lc3NhZ2UiLCJjb25zb2xlIiwiZXJyb3IiXSwic291cmNlcyI6WyJ1c2VEaXNtaXNzZWRSb3V0ZUVycm9yLnRzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7XG4gIFBhcmFtTGlzdEJhc2UsXG4gIFN0YWNrTmF2aWdhdGlvblN0YXRlLFxufSBmcm9tICdAcmVhY3QtbmF2aWdhdGlvbi9uYXRpdmUnO1xuaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiB1c2VJbnZhbGlkUHJldmVudFJlbW92ZUVycm9yKFxuICBzdGF0ZTogU3RhY2tOYXZpZ2F0aW9uU3RhdGU8UGFyYW1MaXN0QmFzZT5cbikge1xuICBjb25zdCBbbmV4dERpc21pc3NlZEtleSwgc2V0TmV4dERpc21pc3NlZEtleV0gPSBSZWFjdC51c2VTdGF0ZTxzdHJpbmcgfCBudWxsPihcbiAgICBudWxsXG4gICk7XG5cbiAgY29uc3QgZGlzbWlzc2VkUm91dGVOYW1lID0gbmV4dERpc21pc3NlZEtleVxuICAgID8gc3RhdGUucm91dGVzLmZpbmQoKHJvdXRlKSA9PiByb3V0ZS5rZXkgPT09IG5leHREaXNtaXNzZWRLZXkpPy5uYW1lXG4gICAgOiBudWxsO1xuXG4gIFJlYWN0LnVzZUVmZmVjdCgoKSA9PiB7XG4gICAgaWYgKGRpc21pc3NlZFJvdXRlTmFtZSkge1xuICAgICAgY29uc3QgbWVzc2FnZSA9XG4gICAgICAgIGBUaGUgc2NyZWVuICcke2Rpc21pc3NlZFJvdXRlTmFtZX0nIHdhcyByZW1vdmVkIG5hdGl2ZWx5IGJ1dCBkaWRuJ3QgZ2V0IHJlbW92ZWQgZnJvbSBKUyBzdGF0ZS4gYCArXG4gICAgICAgIGBUaGlzIGNhbiBoYXBwZW4gaWYgdGhlIGFjdGlvbiB3YXMgcHJldmVudGVkIGluIGEgJ2JlZm9yZVJlbW92ZScgbGlzdGVuZXIsIHdoaWNoIGlzIG5vdCBmdWxseSBzdXBwb3J0ZWQgaW4gbmF0aXZlLXN0YWNrLlxcblxcbmAgK1xuICAgICAgICBgQ29uc2lkZXIgdXNpbmcgYSAndXNlUHJldmVudFJlbW92ZScgaG9vayB3aXRoICdoZWFkZXJCYWNrQnV0dG9uTWVudUVuYWJsZWQ6IGZhbHNlJyB0byBwcmV2ZW50IHVzZXJzIGZyb20gbmF0aXZlbHkgZ29pbmcgYmFjayBtdWx0aXBsZSBzY3JlZW5zLmA7XG5cbiAgICAgIGNvbnNvbGUuZXJyb3IobWVzc2FnZSk7XG4gICAgfVxuICB9LCBbZGlzbWlzc2VkUm91dGVOYW1lXSk7XG5cbiAgcmV0dXJuIHsgc2V0TmV4dERpc21pc3NlZEtleSB9O1xufVxuIl19
