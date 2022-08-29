@@ -225,6 +225,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('wsmarshal.keystore')
+            storePassword 'Esoft1234'
+            keyAlias 'wsmarshal_alias'
+            keyPassword 'Esoft1234'
+        }
     }
     buildTypes {
         debug {
