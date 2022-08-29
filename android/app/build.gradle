@@ -226,10 +226,10 @@ android {
             keyPassword 'android'
         }
         release {
-            storeFile file('wsmarshal.keystore')
-            storePassword 'Esoft1234'
-            keyAlias 'wsmarshal_alias'
-            keyPassword 'Esoft1234'
+            storeFile file('my-upload-key.keystore')
+            storePassword 'android'
+            keyAlias 'android'
+            keyPassword 'android'
         }
     }
     buildTypes {
@@ -239,7 +239,7 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
